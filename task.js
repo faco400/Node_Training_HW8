@@ -84,8 +84,12 @@ class Order {
   }
 
   // get total price of order from cart
-  totalPrice(cart) {
-    return ' total price: R$' + cart.calculatePrice();
+  getTotalPrice() {
+    let totalPrice = 0;
+    this.books.forEach(book => {
+      totalPrice += book.price;
+    })
+    return ' total price: R$' + totalPrice;
   }
 }
 //------------------------------------
@@ -122,11 +126,11 @@ cart2.addBook(book2);
 //logging orders
 console.log('\nOrder 1: ');
 console.log(order1);
-console.log(order1.totalPrice(cart1));
+console.log(order1.getTotalPrice());
 
 console.log('\nOrder 2: ');
 console.log(order2);
-console.log(order2.totalPrice(cart2));
+console.log(order2.getTotalPrice());
 
 //-------------------------------------
 
@@ -186,5 +190,5 @@ console.log('Books in the order: ')
 order3.books.forEach(book => {
   console.log(`title: ${book.title}\nauthor: ${book.author}\ndescrition: ${book.description}\n\n`);
 })
-console.log(order3.totalPrice(cart3));
+console.log(order3.getTotalPrice());
 
