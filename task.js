@@ -1,3 +1,7 @@
+const file = 'db/database.txt'; // database location
+var fs = require('fs'); //module to read/write file
+
+
 //---------- PART 1 ----------------
 class Book {
   constructor(title, author, isbn, price, availability) {
@@ -7,6 +11,38 @@ class Book {
     this.isbn = isbn;
     this.price = price;
     this.availability = availability;
+  }
+
+  //register book to database
+  registerBook(){
+    fs.appendFile(file, JSON.stringify(this), (err) => {
+      if(err) throw err;
+    });
+  }
+
+  //find book in database
+  findBook() {
+    fs.readFile(file, (err, data) => {
+      if (err) throw err;
+    
+      // Split the data by '}' to separate individual JSON objects
+      const objects = data.toString().split('}');
+    
+      objects.forEach((objectString,index) => {
+        if(index !== objects.length-1){
+          objectString += '}';
+        // Parse the JSON object
+          try {
+              const obj = JSON.parse(objectString);
+              // Access object properties here
+              if(obj['title'] === this.title)
+                console.log('Exists in database');
+          } catch (error) {
+              console.error("Error parsing JSON:", error);
+          }
+        }
+      });
+    });
   }
 }
 
@@ -100,9 +136,6 @@ class Order {
 const book1 = new Book('O alienista', 'Machado de Assis', '856356093X', 32.17, true);
 const book2 = new Book('Harry Potter: A pedra filosofal', 'J.K. Rowlling', '8532530788', 46.50, true);
 const book3 = new Book('Um caminho para a liberdade', 'Jojo Moyes', '8551005456', 55.92, true);
-// const book4 = new Book('O Homem de Giz', 'C. J. Tudor','8551002937', 52,19, true);
-// const book5 = new Book('Sherlock Holmes - Casos Extraordinários: Casos Extraordinários', 'Sir Arthur Conan Doyle',
-// '8520003982', 63,99, true);
 
 //Creating Users
 const user1 = new User('Vinicius', 'vvieiradesouza.laba@solvd.com', 1);
@@ -192,3 +225,9 @@ order3.books.forEach(book => {
 })
 console.log(order3.getTotalPrice());
 
+// -------- Registering books in database (BONUS) ------------
+// book1.registerBook();
+// book2.registerBook();
+// book3.registerBook();
+// book4.registerBook();
+// book5.registerBook();

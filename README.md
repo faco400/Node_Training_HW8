@@ -78,6 +78,10 @@ class Order {
     - **type:** number
   - **availability:** Determines if book is available to sell or not
     - **type:** boolean
+- **Methods:**
+  - **registerBook():** register book in database
+  - **findBook():** logs if book exists in database
+- **interactions:** Instances of this class are used by `Cart` and `Order` to manage shopping and ordering processes
 
 ### **mysteryBook**: Class to represent books of mystery
 - **Properties:**
@@ -93,6 +97,10 @@ class Order {
     - **type:** boolean
   - **description:** Description of story of book
     - **type:** string
+- **Methods:**
+  - **registerBook():** register book in database
+  - **findBook():** logs if book exists in database
+- **interactions:** Extended from `Book`, this has the same interactions as `Book`
 
 ### **User**: Class to represent customer
 - **Properties:**
@@ -102,6 +110,7 @@ class Order {
     - **type:** string.
   - **idUser:** identifier of customer
     - **type:** number.
+- **interactions:** Instances of this class are used to store data about Users. This class is used when managing shopping and ordering processes by `Cart` and `Order`
 
 
 ### **Cart**: Class to represent cart of customer
@@ -115,6 +124,7 @@ class Order {
   - **addBook(book):** Adds book to the cart.
   - **removeBook(book):** removes book from cart.
   - **calculatePrice():** Calculates total price of books
+- **interactions:** Instances of this class are used to store data books in the shopping list of user, and the user itself. It interacts with `User` on constructor and with `Book` when adding/removing books in shopping lists
 
 
 ### **Order**: Class to represent order of customer
@@ -124,3 +134,4 @@ class Order {
 
 - **Methods:**
   - **getTotalPrice():** returns a string with total price of the order
+- **interactions:** Instances of this class are used to store data orders. It interacts with `User` and `Book` on constructor.
