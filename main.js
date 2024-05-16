@@ -1,4 +1,4 @@
-//imports
+// --------------- PART 2 -------------------------
 const {Book, mysteryBook} = require("./entity/book.entity");
 const User = require('./entity/user.entity');
 const Cart = require('./entity/cart.entity');
@@ -8,6 +8,12 @@ const Order = require('./entity/order.entity');
 const book1 = new Book('O alienista', 'Machado de Assis', '856356093X', 32.17, true);
 const book2 = new Book('Harry Potter: A pedra filosofal', 'J.K. Rowlling', '8532530788', 46.50, true);
 const book3 = new Book('Um caminho para a liberdade', 'Jojo Moyes', '8551005456', 55.92, true);
+
+// -------- Registering books in database (BONUS) ------------
+book1.registerBook();
+book2.registerBook();
+book3.registerBook();
+// -----------------------------------------------------------
 
 //Creating Users
 const user1 = new User('Vinicius', 'vvieiradesouza.laba@solvd.com', 1);
@@ -80,6 +86,11 @@ resoluções engenhosas e o caráter peculiar do próprio Sherlock Holmes.
 Se você é fã do detetive e de mistérios, provavelmente encontrará muito para gostar nessa coletânea.`
 );
 
+// -------- Registering books in database (BONUS) ------------
+book4.registerBook();
+book5.registerBook();
+// -----------------------------------------------------------
+
 //creating cart and order for user 3
 const cart3 = new Cart(user3); //receives user as a argument for constructor to associate user and cart of books
 const order3 = new Order(user3, cart3.books); // receives both the user and the list of books in his cart
@@ -96,10 +107,3 @@ order3.books.forEach(book => {
   console.log(`title: ${book.title}\nauthor: ${book.author}\ndescrition: ${book.description}\n\n`);
 })
 console.log(order3.getTotalPrice());
-
-// -------- Registering books in database (BONUS) ------------
-// book1.registerBook();
-// book2.registerBook();
-// book3.registerBook();
-// book4.registerBook();
-// book5.registerBook();

@@ -6,14 +6,28 @@ class Order {
     this.books = books;
   }
 
-  // get total price of order from cart
-  getTotalPrice() {
-    let totalPrice = 0;
-    this.books.forEach(book => {
-      totalPrice += book.price;
-    })
-    return ' total price: R$' + totalPrice;
-  }
+    //getters
+    getUser() {
+      return this.user;
+    }
+  
+    getBooks () {
+      return this.books;
+    }
+
+    // get total price of order from cart
+    getTotalPrice() {
+      let totalPrice = 0;
+      this.books.forEach(book => {
+        totalPrice += book.price;
+      })
+      return ' total price: R$' + totalPrice;
+    }
+  
+    //setters
+    setUser(user) {
+      this.user = user;
+    }
 }
 
 module.exports = Order;

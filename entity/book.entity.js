@@ -12,6 +12,48 @@ class Book {
     this.availability = availability;
   }
 
+  //Getters
+  getTitle() {
+    return this.title;
+  }
+
+  getAuthor() {
+    return this.author;
+  }
+
+  getIsbn() {
+    return this.isbn;
+  }
+
+  getPrice() {
+    return this.price;
+  }
+
+  getAvailability() {
+    return this.availability;
+  }
+
+  //Setters
+  setTitle(title) {
+    this.title = title;
+  }
+
+  setAuthor(author) {
+    this.author = author;
+  }
+
+  setISBN(isbn) {
+    this.isbn = isbn;
+  }
+
+  setPrice(price) {
+    this.price = price
+  }
+
+  setAvailability(availability) {
+    this.availability = availability;
+  }
+
   //register book to database
   registerBook(){
     fs.appendFile(file, JSON.stringify(this), (err) => {
@@ -52,6 +94,17 @@ class mysteryBook extends Book {
     super(title, author, isbn, price, availability);
     this.description = description;
   }
+
+  //getters
+  getDescription() {
+    return this.description;
+  }
+
+  //setters
+  setDescription(description) {
+    this.description = description;
+  }
+
 }
 
 module.exports = {Book, mysteryBook};

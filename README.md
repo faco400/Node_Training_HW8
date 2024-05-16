@@ -10,6 +10,7 @@ Repository focusing on Studying node with the focus on javascript object-oriente
     - [Cart](#cart-class-to-represent-cart-of-customer)
     - [Order](#order-class-to-represent-order-of-customer)
 
+
 ### Task
 Design and implement an object-oriented program in JavaScript to simulate the functioning of an online bookstore. This assignment will test your understanding of classes, encapsulation, inheritance, and polymorphism.
 
@@ -74,7 +75,7 @@ class Order {
 # Documentation
 
 ## Classes Description:
-### **Book**: Class to represent a book in the store
+### [**Book**](./entity/book.entity.js): Class to represent a book in the store
 - **Properties:**
   - **title:** title of the book.
     - **type:** string.
@@ -91,7 +92,7 @@ class Order {
   - **findBook():** logs if book exists in database
 - **interactions:** Instances of this class are used by `Cart` and `Order` to manage shopping and ordering processes
 
-### **mysteryBook**: Class to represent books of mystery
+### [**mysteryBook**](./entity/book.entity.js): Class to represent books of mystery
 - **Properties:**
   - **title:** title of the book.
     - **type:** string.
@@ -108,9 +109,9 @@ class Order {
 - **Methods:**
   - **registerBook():** register book in database
   - **findBook():** logs if book exists in database
-- **interactions:** Extended from `Book`, this has the same interactions as `Book`
+- **interactions:** Extended from `Book`, this has the same interactions as `Book`. It also has its own setter and getter for description property
 
-### **User**: Class to represent customer
+### [**User**](./entity/user.entity.js): Class to represent customer
 - **Properties:**
   - **name:** Name of customer
     - **type:** string.
@@ -121,7 +122,7 @@ class Order {
 - **interactions:** Instances of this class are used to store data about Users. This class is used when managing shopping and ordering processes by `Cart` and `Order`
 
 
-### **Cart**: Class to represent cart of customer
+### [**Cart**](./entity/cart.entity.js): Class to represent cart of customer
 - **Properties:**
   - **user:** User who uses the shopping cart
     - **type:** Object
@@ -132,10 +133,11 @@ class Order {
   - **addBook(book):** Adds book to the cart.
   - **removeBook(book):** removes book from cart.
   - **calculatePrice():** Calculates total price of books
+  - **clearCart():** Empties the cart
 - **interactions:** Instances of this class are used to store data books in the shopping list of user, and the user itself. It interacts with `User` on constructor and with `Book` when adding/removing books in shopping lists
 
 
-### **Order**: Class to represent order of customer
+### [**Order**](./entity/order.entity.js): Class to represent order of customer
 - **Properties:**
   - **user:** User who placed order
   - **books:** Array of books in the order
@@ -143,3 +145,10 @@ class Order {
 - **Methods:**
   - **getTotalPrice():** returns a string with total price of the order
 - **interactions:** Instances of this class are used to store data orders. It interacts with `User` and `Book` on constructor.
+
+# How to run tests
+To run tests of implementation feel free to use THE main.js file. It already has initialization of a few instances and a test scenario as requested from [Task](#task). To run it execute the folowwing command on the root directory:
+
+```js
+node main.js
+```

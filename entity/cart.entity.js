@@ -6,6 +6,24 @@ class Cart {
     this.books = []; // used to store array of books
   }
 
+  //getters
+  getUser() {
+    return this.user;
+  }
+
+  getBooks () {
+    return this.books;
+  }
+
+  //setters
+  setUser(user) {
+    this.user = user;
+  }
+
+  clearCart() {
+    this.books = [];
+  }
+  
   //method to add book into array
   addBook(book) {
     //try to push book into array if avaliable, otherwise logs the error
