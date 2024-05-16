@@ -1,0 +1,13 @@
+{
+  "name": "node_training_hw8",
+  "version": "1.0.0",
+  "description": "Repository focusing on Studying node with the focus on javascript object-oriented programming, including its characteristics, such as: classes, encapsulation, inheritance, and polymorphism.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

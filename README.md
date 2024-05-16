@@ -1,8 +1,16 @@
 # Node_Training_HW8
 Repository focusing on Studying node with the focus on javascript object-oriented programming, including its characteristics, such as: classes, encapsulation, inheritance, and polymorphism.
 
-### Task
+1. [Task](#task)
+2. [Documentation](#documentation)
+  - [Classes Description](#classes-description)
+    - [Book](#book-class-to-represent-a-book-in-the-store)
+    - [mysteryBook](#mysterybook-class-to-represent-books-of-mystery)
+    - [User](#user-class-to-represent-customer)
+    - [Cart](#cart-class-to-represent-cart-of-customer)
+    - [Order](#order-class-to-represent-order-of-customer)
 
+### Task
 Design and implement an object-oriented program in JavaScript to simulate the functioning of an online bookstore. This assignment will test your understanding of classes, encapsulation, inheritance, and polymorphism.
 
 ### **Part 1: Class Design**
